@@ -46,7 +46,7 @@ Recommended usage with [crazy-max/swarm-cronjob](https://github.com/crazy-max/sw
 ```yaml
 services:
   backup:
-    image: pg_backup_gcs:latest
+    image: cherrionella/pg_backup_gcs:latest
     deploy:
       mode: replicated
       replicas: 0
@@ -83,5 +83,5 @@ secrets:
 ```sh
 docker run --rm \
   -e PG_CONNECTION_STRING="postgres://user:pass@postgres:5432/db" \
-  pg_backup_gcs backup_manual | gzip > my_local_backup.sql.gz
+  cherrionella/pg_backup_gcs backup_manual | gzip > my_local_backup.sql.gz
 ```
